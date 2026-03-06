@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎂</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-family:Arial;
+overflow:hidden;
+}
+
+/* glowing text */
+
+h1{
+color:white;
+font-size:55px;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white,0 0 20px pink; }
+to{ text-shadow:0 0 20px white,0 0 40px red; }
+}
+
+/* music button */
+
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:white;
+color:#ff4081;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* cake */
+
+.cake{
+position:relative;
+margin-top:30px;
+}
+
+.layer{
+width:200px;
+height:60px;
+background:#ffb6c1;
+border-radius:10px;
+margin:auto;
+}
+
+.layer.middle{
+width:160px;
+background:#ff8fa3;
+margin-top:-10px;
+}
+
+.layer.top{
+width:120px;
+background:#ff6f91;
+margin-top:-10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday 🎉</h1>
+
+<button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+
+<div class="cake">
+<div class="layer top"></div>
+<div class="layer middle"></div>
+<div class="layer"></div>
+</div>
+
+<audio id="music" loop>
+<source src="C:\Users\GOWTHAM\Downloads\24 song.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+function toggleMusic(){
+
+let music=document.getElementById("music");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+
+</script>
+
+</body>
+</html>
